@@ -71,5 +71,68 @@ body{
     padding-top: 30px;
 }
 .header-top-left{
-    
+    position: relative;
+    display: block;
+    float: left;
+    letter-spacing: 0;
 }
+.logo{
+    position: relative;
+    display: inline-block;
+    margin-right: 18px;
+}
+.bt-schedule{
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    border: 0;
+    background-color: transparent;
+    vertical-align: -3px;
+}
+.bt-schedule img{
+    vertical-align: -3px;
+}
+.header-top-right{
+    position: relative;
+    display: block;
+    float: right;
+    padding-top: 3px;
+}
+.track{
+    position: relative;
+    display: inline-block;
+}
+.member-list{
+    position: relative;
+    display: inline-block;
+    vertical-align: -9px;
+}
+.member-list > li{
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 10px;
+}
+.member-list li::after{
+    content: "";
+    position: absolute;
+    top:7px ;
+    right: 0;
+    width: 1px;
+    height: 10px;
+    background-color: #bbb;
+}
+.member-list > li:last-child{
+    padding-right: 0;
+}
+.member-list > li:last-child:after{
+    content: none;
+}
+.member-list > li > a{
+    position: relative;
+    display: block;
+    font-size: 13px;
+    color: #666;
+}
+/* center-more는 js 연동 */

@@ -43,13 +43,22 @@ body {
   width: 1200px;
   margin: 0 auto;
 }
-/* 전체레이아웃 */
+/* swiper 기본 세팅 */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+/* section 레이아웃 공통 패팅 */
+.wrap > section {
+  padding: 80px 0;
+}
+/* 전체 레이아웃 */
 .wrap {
   position: relative;
   display: block;
   /* 헤더가 fix가 되므로 레이아웃용 */
   padding-top: 128px;
-  transition: padding-top 0.2s;
+  transition: padding-top 0.2;
 }
 .header.active {
   top: -61px;
@@ -120,19 +129,16 @@ body {
   float: left;
   padding: 0 10px;
 }
-.member-list > li::after {
+.member-list li::after {
   content: "";
   position: absolute;
   top: 7px;
   right: 0;
   width: 1px;
-  height: 9px;
+  height: 8px;
   background-color: #bbb;
 }
-.member-list > li:last-child {
-  padding-right: 0;
-}
-.member-list > li:last-child:after {
+.member-list li:last-child:after {
   content: none;
 }
 .member-list > li > a {
@@ -141,19 +147,19 @@ body {
   font-size: 13px;
   color: #666;
 }
-/* center-more는 js연동 */
+/* center-more 는 js 연동 */
 .center-more {
   padding-right: 15px;
 }
 .center-more::after {
   content: "";
-  position: absolute;
   width: 10px;
   height: 6px;
+  position: absolute;
   display: block;
   top: 50%;
-  right: 0;
-  transform: translatey(-50%);
+  right: 0%;
+  transform: translateY(-50%);
   background: url("../images/icoMyMenu.png") no-repeat;
   background-position: 0px 0px;
 }
@@ -181,12 +187,12 @@ body {
   display: block;
   white-space: nowrap;
 }
-/* 헤더의 메인(하단) */
+/* 헤더의 메인 (하단)*/
 .header-main {
   display: block;
   position: relative;
   padding: 13px 0;
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
 }
 .header-main-left {
   position: relative;
@@ -198,7 +204,7 @@ body {
   display: inline-block;
   padding-top: 12px;
   margin-right: 45px;
-  /* background-color: bisque; */
+  background-color: antiquewhite;
 }
 .gnb {
   position: relative;
@@ -225,7 +231,6 @@ body {
 .gnb > li > a:hover {
   color: #76bd42;
 }
-
 .ball::after {
   content: "";
   position: absolute;
@@ -240,7 +245,6 @@ body {
   position: relative;
   display: block;
   font-size: 17px;
-  color: #000;
   font-weight: 500;
   border: 0;
   background-color: transparent;
@@ -251,7 +255,8 @@ body {
   display: inline-block;
   margin-right: 12px;
 }
-/* 전체 메뉴 */
+
+/* 전체메뉴 */
 .all-menu-area {
   position: absolute;
   left: 0;
@@ -259,17 +264,18 @@ body {
   display: inline-block;
   height: 43px;
   width: 100px;
+  /* background-color: #000; */
 }
 .all-menu {
+  background-color: #fff;
   position: absolute;
   left: 0;
   top: 41px;
   width: 210px;
-  background-color: #fff;
   height: 0;
   border: 1px solid #ddd;
   box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
-  visibility: hidden;
+  /* visibility: hidden; */
   overflow: hidden;
   transition: width 0.5s;
 }
@@ -283,11 +289,11 @@ body {
 .all-menu-cate {
   position: relative;
   display: block;
-  width: 210px;
   height: calc(100vh - 105px - 128px);
+  width: 210px;
   background-color: #fff;
   overflow: auto;
-  /* 여기에다가 스크롤을 걸어줌 */
+  /* 여기에 스크롤을 걸어줌 */
 }
 .cate-list {
   position: relative;
@@ -295,7 +301,7 @@ body {
 .cate-list > li {
   position: relative;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 40px;
 }
 .cate-list > li > a {
@@ -306,7 +312,6 @@ body {
 .cate-list > li > a::after {
   content: "";
   position: absolute;
-  /* top: calc(50% - 5px); */
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
@@ -335,8 +340,8 @@ body {
   bottom: 0;
   display: block;
   height: 1px;
-  width: calc(100% - 24px - 24px);
   background-color: #ddd;
+  width: calc(100% - 24px - 24px);
 }
 .theme-list > li:first-child::before {
   content: "";
@@ -345,8 +350,8 @@ body {
   top: 0;
   display: block;
   height: 1px;
-  width: calc(100% - 24px - 24px);
   background-color: #666;
+  width: calc(100% - 24px - 24px);
 }
 .theme-list > li:last-child::after {
   background-color: #666;
@@ -359,10 +364,9 @@ body {
 .theme-list > li > a::after {
   content: "";
   position: absolute;
-  /* top: calc(50% - 5px); */
-  top: 50%;
   transform: translateY(-50%);
   right: 20px;
+  top: 50%;
   width: 6px;
   height: 10px;
   background: url("../images/icoGnbArr1.png") no-repeat 0 0px;
@@ -397,10 +401,9 @@ body {
 .deli-list > li > a::after {
   content: "";
   position: absolute;
-  /* top: calc(50% - 5px); */
-  top: 50%;
   transform: translateY(-50%);
   right: 20px;
+  top: 50%;
   width: 6px;
   height: 10px;
   background: url("../images/icoGnbArr1.png") no-repeat 0 0px;
@@ -420,7 +423,7 @@ body {
   top: 0;
   width: 100%;
   padding: 0 24px;
-  /* deoth2를 한자리에 모으는 것 */
+  /* depth2를 한자리에 모은 것 */
 }
 .cate-depth2-list > li {
   font-size: 15px;
@@ -492,11 +495,11 @@ body {
   line-height: 19px;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
-.join-list > li > a:hover,
-.more-menu-list > li > a:hover {
+.join-list > li:hover,
+.more-menu-list > li:hover {
   font-weight: 600;
   color: #000;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
 }
 .more-menu {
   position: relative;
@@ -522,13 +525,12 @@ body {
   margin-left: 3px;
   vertical-align: 2px;
 }
-.more-menu-bt.active {
+.more-menu.bt.active {
   color: #76bd42;
 }
 .more-menu-bt.active .more-menu-icon {
   background-position: 0px -6px;
 }
-
 .header-main-right {
   position: relative;
   display: block;
@@ -547,15 +549,15 @@ body {
   background-color: #f7f7f7;
   border-radius: 20px;
   padding-left: 20px;
-  padding-right: 45px;
+  padding-right: 40px;
   border: 1px solid #f7f7f7;
   line-height: 40px;
   font-size: 13px;
 }
 .search-txt:focus {
-  background-color: #fff;
+  background-color: #ffff;
   border: 1px solid #76bd42;
-  color: #000;
+  color: #0000;
 }
 .search-bt {
   position: absolute;
@@ -591,9 +593,129 @@ body {
   text-align: center;
   color: #fff;
   background-color: #76bd42;
-
-  line-height: 18px;
   font-size: 11px;
   font-weight: 700;
 }
-.visual
+/* 비주얼 */
+.visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 410px;
+  padding: 0 !important;
+  overflow: hidden;
+}
+.visual-slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.visual-slide-page {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.visual-slide-page a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.visual-slide-page a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 슬라이드 이전 다음 버튼 */
+.visual-prev,
+.visual-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  border: 0;
+  z-index: 999;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 0;
+  cursor: pointer;
+}
+.visual-prev {
+  left: calc(50% - 600px);
+  background: rgba(0, 0, 0, 0) url("../images/visualArrP.png") no-repeat;
+  background-position: 0 -64px;
+}
+.visual-prev:hover {
+  background: rgba(0, 0, 0, 0.15) url("../images/visualArrP.png") no-repeat;
+  background-position: 0px 0px;
+}
+.visual-next {
+  right: calc(50% - 600px);
+  background: rgba(0, 0, 0, 0) url("../images/visualArrN.png") no-repeat;
+  background-position: 0 -64px;
+}
+.visual-next:hover {
+  background: rgba(0, 0, 0, 0.15) url("../images/visualArrN.png") no-repeat;
+  background-position: 0px 0px;
+}
+/* 컨트롤러 */
+.visual-control {
+  position: absolute;
+  bottom: 43px;
+  z-index: 999;
+  left: calc(50% - 600px + 80px);
+  display: block;
+}
+.visual-play {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../images/visualPlay.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  border: 0;
+  float: left;
+}
+.visual-play.active {
+  background-position: 0px -30px;
+}
+.visual-page {
+  position: relative;
+  display: block;
+  width: 52px !important;
+  height: 30px;
+  background: url("../images/visualNum.png") no-repeat;
+  text-align: center;
+  color: #fff !important;
+  line-height: 31px;
+  letter-spacing: -1px;
+  text-indent: 3px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 5px;
+  float: left;
+  bottom: 0 !important;
+  
+}
+.visual-more {
+  position: relative;
+  display: block;
+  width: 29px;
+  height: 30px;
+  background: url("../images/visualMore.png") no-repeat;
+  cursor: pointer;
+  border: 0;
+  margin-left: 3px;
+  float: left;
+}

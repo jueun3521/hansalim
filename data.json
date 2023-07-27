@@ -269,5 +269,94 @@
       "id": "0",
       "link": "#"
     }
+  ],
+  "popularicon":[
+    {
+      "id": "icon-1",
+      "icon": "icon_1.png",
+      "txt": "쌀/잡곡",
+      "link": "#"
+    },
+    {
+      "id": "icon-2",
+      "icon": "icon_2.png",
+      "txt": "채소/버섯",
+      "link": "#"
+    },
+    {
+      "id": "icon-3",
+      "icon": "icon_3.png",
+      "txt": "과일/견과",
+      "link": "#"
+    },
+    {
+      "id": "icon-4",
+      "icon": "icon_4.png",
+      "txt": "축산/축산가공",
+      "link": "#"
+    },
+    {
+      "id": "icon-5",
+      "icon": "icon_5.png",
+      "txt": "수산/수산가공",
+      "link": "#"
+    },
+    {
+      "id": "icon-6",
+      "icon": "icon_6.png",
+      "txt": "반찬/양념/가루",
+      "link": "#"
+    },
+    {
+      "id": "icon-7",
+      "icon": "icon_7.png",
+      "txt": "식사대용/간편식",
+      "link": "#"
+    },
+    {
+      "id": "icon-8",
+      "icon": "icon_8.png",
+      "txt": "간식/음료/유제품",
+      "link": "#"
+    },
+    {
+      "id": "icon-9",
+      "icon": "icon_9.png",
+      "txt": "건강/차",
+      "link": "#"
+    },
+    {
+      "id": "icon-10",
+      "icon": "icon_10.png",
+      "txt": "화장품/오가닉코튼",
+      "link": "#"
+    },
+    {
+      "id": "icon-11",
+      "icon": "icon_11.png",
+      "txt": "주방/욕실/세정",
+      "link": "#"
+    },
+    {
+      "id": "icon-12",
+      "icon": "icon_12.png",
+      "txt": "휴지/생활",
+      "link": "#"
+    },
+    {
+      "id": "icon-13",
+      "icon": "icon_13.png",
+      "txt": "반려동물",
+      "link": "#"
+    },
+    {
+      "id": "icon-14",
+      "icon": "icon_14.png",
+      "txt": "대용량/어린이집",
+      "link": "#"
+    }
+  ],
+  "populargood":[
+    
   ]
 }

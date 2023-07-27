@@ -1015,11 +1015,66 @@ body {
 .recommend {
   position: relative;
   display: block;
-  background-color: #edf9f9;
+  background-color: #fff8fa;
 }
 .recommend .slide-control {
   margin-top: 100px;
 }
+.recommend .section-title-txt{
+  font-size: 17px;
+  border-bottom: 2px solid #76bd42;
+  display: inline-block;
+}
 .blue{
   color: #76bd42;
+}
+/* 인기물품 */
+.popular{
+  /* background-color: yellow; */
+  position: relative;
+  display: block;
+}
+.popular-more{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 34px;
+  padding: 0 20px;
+  border: 1px solid #bbb;
+  line-height: 32px;
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  background-color: #fff;
+  transition: background 0.5s;
+}
+/* 슬라이드 아이콘 */
+.popular-slide{
+  position: relative;
+  display: block;
+  width:calc(100% - 80px - 80px) ;
+  height: 140px;
+  float: left;
+  /* background-color: #ff9933; */
+}
+.popular-slide a{
+  /* background-color: yellowgreen; */
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 140px;
+}
+.popular-cate-icon{
+  position: relative;
+  display: block;
+  width: 65px;
+  height: 64px;
+  margin: 20px auto;
+}
+.popular-cate-name{
+  position: relative;
+  display: block;
+  font-size: 17px;
+  text-align: center;
+  white-space: nowrap;
 }

@@ -1004,5 +1004,10 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   margin-bottom: 10px;
-  
+}
+.new-right .new-box:nth-child(2n+1){
+  float: left;
+}
+.new-right .new-box:nth-child(2n){
+  float: right;
 }

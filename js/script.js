@@ -1,4 +1,5 @@
 window.onload = function () {
+  // 상단
   const wrap = document.querySelector(".wrap");
   const header = document.querySelector(".header");
   let scy = 0;
@@ -16,7 +17,7 @@ window.onload = function () {
   function priceToString(price) {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-
+  // ===============================================================
   // data.json을 로딩
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function (event) {
@@ -33,6 +34,7 @@ window.onload = function () {
       TODAY_GOOD = obj.todaygood;
       SALE_GOOD = obj.salegood;
       NEW_GOOD = obj.newgood;
+      RECOMMEND_GOOD = obj.recommendgood;
       // 비주얼 화면에 배치한다
       showVisual();
       // 오늘의 상품을 화면에 배치
@@ -41,6 +43,8 @@ window.onload = function () {
       showSaleGood();
       // 신상품을 화면에 배치
       showNewGood();
+      // 추천 상품을 화면에 배치
+      showRecommendGood();
     }
   };
   // 자료를 호출한다.
@@ -63,7 +67,9 @@ window.onload = function () {
   let NEW_GOOD;
   let newTag = document.getElementById("data-new");
   let newListTag = document.getElementById("data-new-list");
-
+  // 추천 상품 화면 출력 기능
+  let RECOMMEND_GOOD;
+  let recommendTag = document.getElementById("data-recommend");
   //============================================
   // 비주얼 화면 출력 기능
   function showVisual() {
@@ -273,6 +279,60 @@ window.onload = function () {
       html += tag;
     });
     newListTag.innerHTML = html;
+  }
+  // 추천상품 화면 출력 기능
+  function showRecommendGood() {
+    let html = `
+    <div class = "swiper sw-recommend">
+    <div class = "swiper-wrapper">
+
+    `;
+    SALE_GOOD.forEach(function (item) {
+      let tag = `
+      <div class="swiper-slide">
+      <div class="good-box">
+      <!-- 제품이미지 -->
+      <a href="${item.link}" class="good-img">
+          <img src="../images/${item.pic}" alt="${item.name}" />
+          <span class="good-type">${item.tag}</span>
+
+      </a>
+      <!-- 제품정보 -->
+      <a href="${item.link}" class="good-info">
+          <em>${item.name}</em>(<em>${item.unit}</em>)
+      </a>
+      <!-- 제품가격 -->
+      <a href="${item.link}" class="good-info-price">
+          ${priceToString(item.price)} <em>원</em>
+      </a>
+      <!-- 장바구니 이미지 -->
+      <button class="good-add-cart"></button>
+
+  </div>
+      
+      
+      </div>
+      `;
+      html += tag;
+    });
+    html += `
+    </div>
+    </div>
+    `;
+    recommendTag.innerHTML = html;
+    const swRecommend = new Swiper(".sw-recommend", {
+      slidesPerView: 3,
+      spaceBetween: 16,
+      slidesPerGroup: 3,
+      navigation: {
+        prevEl: ".recommend .slide-prev",
+        nextEl: ".recommend .slide-next",
+      },
+      pagination: {
+        el: ".recommend .slide-pg",
+        type: "fraction",
+      },
+    });
   }
   // ========================================
   // 펼침 목록들 보기 기능

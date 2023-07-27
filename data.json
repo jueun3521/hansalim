@@ -195,5 +195,79 @@
       "id": "4",
       "link": "#"
     }
+  ],
+  "recommendgood": [
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_1.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_2.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_3.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_4.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_5.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_6.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_7.jpg",
+      "id": "0",
+      "link": "#"
+    },
+    {
+      "name": "콩콩크림빵",
+      "unit": "1개",
+      "price": 1500,
+      "tag": "인기",
+      "pic": "good_8.jpg",
+      "id": "0",
+      "link": "#"
+    }
   ]
 }

@@ -1011,3 +1011,15 @@ body {
 .new-right .new-box:nth-child(2n){
   float: right;
 }
+/* 추천 상품 */
+.recommend {
+  position: relative;
+  display: block;
+  background-color: #edf9f9;
+}
+.recommend .slide-control {
+  margin-top: 100px;
+}
+.blue{
+  color: #76bd42;
+}

@@ -17,6 +17,22 @@ window.onload = function () {
   function priceToString(price) {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  // 하단 패밀리 펼침 기능
+  // 목록 열기 버튼
+  const openBt = document.querySelector(".footer-link");
+  // 목록 닫기 버튼
+  const closeBt = document.querySelector(".family-close");
+  // 보여질 패밀리 목록
+  const family = document.querySelector(".family")
+  // 기능 처리
+  openBt.addEventListener("click", function (){
+    family.classList.add("active");
+    this.classList.add(".active");
+  });
+  closeBt.addEventListener("click", function(){
+    family.classList.remove("active");
+    openBt.classList.remove("active");
+  })
   // ===============================================================
   // data.json을 로딩
   const xhttp = new XMLHttpRequest();
@@ -41,6 +57,9 @@ window.onload = function () {
       BANNER_ARR = obj.bannerarr;
       SEASON_ARR = obj.season;
       REVIEW_ARR = obj.review;
+      NOTICE_ARR = obj.notice;
+      GOODNEWS_ARR = obj.goodnews;
+
 
       // 비주얼 화면에 배치한다
       showVisual();
@@ -64,6 +83,10 @@ window.onload = function () {
       showSeason();
       // 리뷰 목록을 화면에 배치
       showReview();
+      // 공지사항 목록을 화면에 배치
+      showNotice();
+      // 물품소식 목록을 화면에 배치
+      showGoodnews();
     }
   };
   // 자료를 호출한다.
@@ -104,11 +127,16 @@ window.onload = function () {
   let bannerTag = document.getElementById("data-banner");
   // 시즌 화면 출력
   let SEASON_ARR;
-  let seasonTag = document.getElementById("data-season")
+  let seasonTag = document.getElementById("data-season");
   // 리뷰화면 출력
   let REVIEW_ARR;
-  let reviewTag = document.getElementById("data-review")
-
+  let reviewTag = document.getElementById("data-review");
+  // 공지사항 화면출력
+  let NOTICE_ARR;
+  let noticeTag = document.getElementById("data-notice");
+  // 물품소식 화면출력
+  let GOODNEWS_ARR;
+  let goodnewsTag = document.getElementById("data-goodnews");
   //============================================
   // 비주얼 화면 출력 기능
   function showVisual() {
@@ -707,6 +735,73 @@ function showPopularIconGood() {
         type: "fraction",
       },
     });
+    }
+    // 공지사항 화면출력기능
+    function showNotice() {
+      let html = "";
+      // 데이터갱신
+      NOTICE_ARR.forEach(function (item){
+        const tag = `
+          <li>
+            <a href="${item.link}">
+              <span>
+                ${item.title}
+              </span>
+              <em>${item.date}</em>
+            </a>
+          </li>
+        `;
+        html += tag;
+      });
+      noticeTag.innerHTML = html;
+    }
+    // 물품소식 화면출력기능
+    function showGoodnews(){
+      let html = ""
+      // 데이터 갱신
+      GOODNEWS_ARR.forEach(function(item){
+        const tag = `
+        <li>
+            <a href="${item.link}">
+              <span>
+                ${item.title}
+              </span>
+              <em>${item.date}</em>
+            </a>
+          </li>
+        `;
+        html += tag;
+      });
+      goodnewsTag.innerHTML = html;
+    }
+    // 커뮤니티 탭메뉴
+    // 탭버튼
+    const tabBtArr = document.querySelectorAll(".community-bt");
+    // 탭 내용
+    const tabConArr = document.querySelectorAll(".community-notice dd");
+    // 탭 포커스
+    let tabFocusIndex = 0;
+    // 탭 버튼 클릭 처리
+    tabBtArr.forEach(function(item, index){
+      item.addEventListener("click", function(){
+        tabFocusIndex = index;
+        tabFocusFn()
+      })
+    })
+    // 탭 포커스 함수를 생성
+    function tabFocusFn(){
+      // 포커스 css를 적용 및 제거
+      // 일단 모두 제거 
+        tabBtArr.forEach(function(item){
+          item.classList.remove("community-bt-active")
+        });
+        // 인덱스에 해당하는 것만 적용
+        tabBtArr[tabFocusIndex].classList.add("community-bt-active");
+        // 내용에서 일단 모두 제거
+        tabConArr.forEach(function(item){
+          item.classList.remove("community-visible-active")
+        });
+        tabConArr[tabFocusIndex].classList.add("community-visible-active");
     }
   // ======================================================
   // 펼침 목록들 보기 기능
